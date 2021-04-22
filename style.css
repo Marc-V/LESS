@@ -1,0 +1,11 @@
+#container {
+  background-color: #978b1a;
+  width: 100%;
+}
+.uno {
+  background-color: darkviolet;
+  width: 300/700 * 100;
+}
+table {
+  border: 1px solid black;
+}
