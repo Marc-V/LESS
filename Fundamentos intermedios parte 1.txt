@@ -1,0 +1,125 @@
+Fundamentos Intermedios . Parte 1
+//1. Sigma - Implementa una función sigma(num) que dado un número, devuelve la suma de todos los enteros
+positivos(incluyendo el número dado).
+
+ function sumatoria(num){
+  
+	var sum = 0;
+	var contador = num;
+
+	for(var contador=num; contador!==0; contador--){
+		sum+=contador
+	}
+		return sum;
+}
+
+	console.log(sumatoria(3));
+______________________________________________________________________________________________
+//2. Factorial - Escribe una función factorial (num) que dado un número devuelva el producto de todos los enteros positivos
+
+ function factorial(num){
+  
+  var sum = 1;
+  var contador = num;
+
+for(var contador = num; contador > 0; contador --){
+  sum *= contador
+}
+    return sum;
+  }
+
+console.log(factorial(4));
+______________________________________________________________________________________________
+//3. Fibonacci - Crea una función para generar números de Fibonacci. En esta famosa secuencia matemática, cada número es la 
+suma de las dos anteriores, partiendo con los valores 0 y 1. Tu función debería aceptar un argumento, un índice en la secuencia 
+(donde 0 corresponde al valor inicial, 4 corresponden al valor cuatro más tarde, etc). Ejemplos: fibonacci(0) = 0 (dado), 
+fibonacci(1) = 1 (dado), fibonacci(2) = 1 (fib(0)+fib(1), o 0+1), fibonacci(3) = 2 (fib(1) + fib(2)3, o 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), 
+fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8). Haz esto primero sin usar recursión. Si no sabes qué es una recursión, no te preocupes puesto que vamos a 
+introducir este concepto en la Parte 2 de esta actividad. 
+
+function fibo(n_entrada){
+  var num_0 = 0;
+  var num_1 = 1;
+  var sum;
+  var num_2 = 1;
+  console.log(num_0,num_1);
+  
+  for(i = 3; i<=n_entrada;i++){
+    sum=num_0+num_1;
+    console.log(sum);
+    num_2= num_2 + sum;
+    num_0 = num_1;
+    num_1=sum;
+  }
+}
+
+fibo((2));
+
+
+
+function Fibonacci(n){
+	if(n==0 || n==1){
+	return n;
+	}
+	return Fibonacci(n-2)+Fibonacci(n-1);
+}
+Fibonacci(2);
+______________________________________________________________________________________________
+//4. Array: Penúltimo - Devuelve el penúltimo elemento del array. Dado [42,true,4,”Liam”, 7] devuelve “Liam”. Si el array es muy pequeño, devuelve null. 
+
+function pultimo(arr,num){
+  
+    if(arr.length>num){
+      console.log(arr[arr.length-2]);
+		
+		}else{
+			return null;
+    }
+}
+
+
+pultimo([2,7,'hola'],2);
+______________________________________________________________________________________________
+//5. Array: “N” último - Devuelve el elemento “N” último. Dado ([5,2,3,6,4,9,7],3], devuelve 6. Si el array es muy pequeño, devuelve null. 
+
+function nultimo(arr,num){
+  
+    if(arr.length>num){
+      console.log(arr[num]);
+	}
+    else{
+		return null;	
+    }
+}
+
+(nultimo([1,9,45,7,19,3],3));
+
+______________________________________________________________________________________________
+//6. Array: Segundo más grande - Devuelve el segundo elemento más grande de un array. Dado [42,1,4,3.14,7], devuelve 7.  
+Si el array es muy pequeño, devuelve null.
+
+function segundoGrande(arr){
+  var sum = arr[0];
+  
+  for(var i=0; i<arr.length;i++){
+    if(sum<arr[i]){
+      sum=arr[i];
+	  }
+  return sum;
+
+}
+console.log(segundoGrande([1,5,3,4,9]));
+______________________________________________________________________________________________
+//7. Doble Problema Par - Crea una función que cambie un array dado duplicando cada uno de sus elementos 
+en una posición par, y manteniendo el orden original.
+
+function doblando(arr){
+   
+  for(var i=arr.length-1; i>=0;i--){
+    arr[i*2+1]=arr[i];
+    arr[i*2]=arr[i];
+	}
+	console.log(arr);
+}
+
+doblando([3,"hola", 89, "ayer"]);
